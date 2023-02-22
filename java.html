@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="java.css" />
+<body>
+<h1 class="tag"> TEXT AS </h1>
+<div class="sani">
+<textarea id="text" cols="30" rows="10" > </textarea> </br>
+<button onclick = "handelLowerCase()" class="stylea"> UpperCase </button>
+<button onclick = "handelRemoveSpace()" class="stylea1"> Space </button> 
+<button onclick = "handelCapitale()" class="stylea2"> Capital </button>
+<pre id="pre"> preview: </pre>
+</div>
+<footer id="footer" > All right reserved by &copy; Sazida Chowdhury </footer>
+<script type= "text/javascript">
+let textvalue = document.getElementById('text');
+let preview = document.getElementById('pre');
+function handelLowerCase()
+{
+ preview.innerText = textvalue.value.toLowerCase();
+}
+function handelRemoveSpace()
+{
+ preview.innerText = textvalue.value.split(" ").filter(word => word).join(" ");
+}
+function handelCapitale()
+{
+ let array = textvalue.value.split(' ');
+ for(let index = 0; index<array.length; index++)
+{
+ array[index] = array[index].charAt(0).toUpperCase() + array[index].slice(1);
+}
+preview.innerText = array.join(' ');
+}
+</script>
+</body>
+</head>
